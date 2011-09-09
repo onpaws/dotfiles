@@ -1,3 +1,8 @@
+# show hidden files in open dialog with cmd-shift-period
+
+# hidden icons in dock are semi transparent
+defaults write com.apple.Dock showhidden -bool YES
+
 # Enable the 2D Dock
 defaults write com.apple.dock no-glass -bool true
 
