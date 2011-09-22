@@ -10,6 +10,9 @@ alias -- -="cd -"
 # List all files colorized in long format, including dot files
 alias la="ls -Gla"
 
+# List only directories
+alias lsd='ls -l | grep "^d"'
+
 # Undo a `git push`
 alias undopush="git push -f origin HEAD^:master"
 
@@ -43,6 +46,17 @@ alias fs="stat -f \"%z bytes\""
 
 # ROT13-encode text. Works for decoding, too! ;)
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+
+# Empty the Trash
+alias emptytrash="rm -rfv ~/.Trash"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 # Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
