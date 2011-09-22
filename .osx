@@ -1,5 +1,8 @@
 # show hidden files in open dialog with cmd-shift-period
 
+defaults write com.apple.finder QuitMenuItem -bool true
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
 # hidden icons in dock are semi transparent
 defaults write com.apple.Dock showhidden -bool YES
 
