@@ -1,5 +1,8 @@
 # show hidden files in open dialog with cmd-shift-period
 
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+
 defaults write com.apple.finder QuitMenuItem -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
