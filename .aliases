@@ -1,5 +1,5 @@
 # Color ls
-[[ "$OSTYPE" =~ ^darwin ]] && alias ls='command ls -G' || alias ls='command ls --color';
+[[ "$OSTYPE" =~ ^darwin ]] && alias ls='ls -G' || alias ls='ls --color';
 
 # Easier navigation: .., ..., ~ and -
 alias ..="cd .."
@@ -40,6 +40,8 @@ alias p="cd ~/Projects"
 alias g="git"
 alias v="vim"
 alias m="mate ."
+#added by PAWS 20111010 for MacVim conveni
+alias mv="open /Applications/MacVim.app"
 
 # File size
 alias fs="stat -f \"%z bytes\""
