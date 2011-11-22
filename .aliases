@@ -59,7 +59,7 @@ alias g="git"
 alias v="vim"
 alias m="mate ."
 #added by PAWS 20111010 for MacVim conveni
-alias mv="open /Applications/MacVim.app"
+alias macvim="open /Applications/MacVim.app"
 
 # File size
 alias fs="stat -f \"%z bytes\""

@@ -1,3 +1,4 @@
+" Shortcuts:
 " ; == :   i.e. ;w will work as :w
 " in insert mode, jj escapes out to command mode
 "Ctrl-l removes highlights
