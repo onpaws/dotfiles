@@ -106,7 +106,11 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Empty Trash securely by default
 #defaults write com.apple.finder EmptyTrashSecurely -bool true
-#paws - i like it faster. disabled 20111118
+#paws - i like faster deletes. disabled 20111118
+
+#Disable Google auto-update source:http://support.google.com/installer/bin/answer.py?hl=en&ctx=go&answer=147176
+#PAWS added 20111201
+defaults write com.google.Keystone.Agent checkInterval 0
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1

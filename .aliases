@@ -61,6 +61,9 @@ alias m="mate ."
 #added by PAWS 20111010 for MacVim conveni
 alias macvim="open /Applications/MacVim.app"
 
+#Run Google Software Update
+alias googleupdate="/Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/CheckForUpdatesNow.command"
+
 # File size
 alias fs="stat -f \"%z bytes\""
 
