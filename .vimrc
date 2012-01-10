@@ -1,8 +1,19 @@
-" Shortcuts:
+" Pat's fun little list of shortcuts:
 " ; == :   i.e. ;w will work as :w
+" <leader> is comma
 " in insert mode, jj escapes out to command mode
 "Ctrl-l removes highlights
+"Ctrl-j shows/hides tabs and trailing whitespace
+"CTRL-X CTRL-N and CTRL-X CTRL-P do autocomplete-y things
+"NERDTree: use ma to create a new file at the selected node
+
+" SCROLLING TIPS:
+" zz centers window on the cursor's line
+" ctrl-e ctrl-y scroll viewport up / down
 "w!! writes to read-only files
+
+"Use Tim Pope's Pathogen, see https://github.com/tpope/vim-pathogen
+call pathogen#infect()
 
 "    ____                           _ 
 "   / ___| ___ _ __   ___ _ __ __ _| |
@@ -35,11 +46,18 @@ nnoremap ; :
 inoremap jj <ESC>
 "FYI, ctrl-c and ctrl-[ also escape
 
+"Set history length longer
+set history=1000
+
 "  _   _ ___ 
 " | | | |_ _|
 " | | | || | 
 " | |_| || | 
 "  \___/|___|
+
+" Map the so-called <leader> key to comma (backslash is default)
+let mapleader = ","
+
 "Switch syntax highlighting on, when the terminal has colors
 "Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
@@ -57,6 +75,26 @@ set mouse=a
 
 "Display line numbers
 set number
+
+"Set title in terminals
+set title
+
+"Show all auto-complete options, not just first one
+set wildmenu
+
+"Auto-complete shell-style; i.e. complete up to point of ambiguity
+set wildmode=list:longest
+
+"Scroll when cursor is 3 lines away from top/bottom
+set scrolloff=3
+
+"Scroll viewport 3 lines instead of 1 with ctrl-e ctrl-y
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
+"Ctrl-J reveals ASCII (tabs and trailing whitespaces)
+set listchars=tab:>-,trail:·,eol:$
+nmap <silent> <C-j> :set nolist!<CR>
 
 " _____                 _   _
 "|   __|___ ___ ___ ___| |_|_|___ ___
@@ -118,7 +156,7 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
+nmap <lEeader>l :set list!<CR>
  
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:>\ ,eol:$
@@ -141,8 +179,4 @@ let python_highlight_all=1
 
 " Remove any extra whitespace from the ends of lines when saving a file
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
-
-
-
-
 
