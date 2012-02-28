@@ -49,6 +49,9 @@ inoremap jj <ESC>
 "Set history length longer
 set history=1000
 
+" automatically reload vimrc when it's saved
+au BufWritePost .vimrc so ~/.vimrc
+
 "  _   _ ___ 
 " | | | |_ _|
 " | | | || | 
