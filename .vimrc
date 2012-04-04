@@ -174,7 +174,6 @@ set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]
 
 "always show status line
 set laststatus=2
-<<<<<<< HEAD
 
 "disable F1 for help (:help still works)
 inoremap <F1> <ESC>
