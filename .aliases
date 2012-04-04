@@ -108,4 +108,5 @@ alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 #Playpause iTunes
-alias playpause="osascript -e 'tell application iTunes to playpause'"
+alias playpause="osascript -e 'tell application \"iTunes\" to playpause'"
+alias p="osascript -e 'tell application \"iTunes\" to playpause'"
