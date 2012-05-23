@@ -12,9 +12,11 @@
 	# Clone a repository including all submodules
 	c = clone --recursive
 	# Commit all changes
-	ca = commit -a
+	ca = !git add . && git add -u && git commit -a
 	# Switch to a branch, creating it if necessary
 	go = checkout -B
+	# Credit an author on the latest commit
+	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
 
@@ -73,3 +75,5 @@
 	autocorrect = 1
 [rerere]
 	enabled = 1
+[diff]
+	tool = vimdiff
