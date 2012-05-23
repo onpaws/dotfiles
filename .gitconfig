@@ -69,3 +69,7 @@
 	insteadOf = "gist:"
 [alias]
 	st = status
+[help]
+	autocorrect = 1
+[rerere]
+	enabled = 1
