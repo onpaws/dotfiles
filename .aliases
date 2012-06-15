@@ -125,3 +125,6 @@ alias p="osascript -e 'tell application \"iTunes\" to playpause'"
 
 #PAWS added 20120418 for JavaScript Console via wat https://www.destroyallsoftware.com/talks/wat
 alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc"
+
+#PAWS added 20120615 for JSON pretty print. http://bizorgnet.com/2012/06/14/prettyprint-json-in-terminal.html
+alias json="python -mjson.tool"
