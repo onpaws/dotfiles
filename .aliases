@@ -1,9 +1,8 @@
-# Color ls
-[[ "$OSTYPE" =~ ^darwin ]] && alias ls='ls -G' || alias ls='ls --color';
-
-# Easier navigation: .., ..., ~ and -
+# Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
@@ -11,6 +10,8 @@ alias -- -="cd -"
 alias d="cd ~/Documents/Dropbox"
 alias p="cd ~/Projects"
 alias g="git"
+alias h="history"
+alias j="jobs"
 alias v="vim"
 alias m="mate ."
 alias s="subl ."
@@ -81,7 +82,7 @@ alias googleupdate="/Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bu
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # File size
-alias fs="stat -f \"%z bytes\""
+alias fs="stat -c \"%s bytes\""
 
 # ROT13-encode text. Works for decoding, too! ;)
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'

@@ -76,10 +76,18 @@ set guifont=Menlo\ Regular:h14
 "enable mouse in terminals. works for PuTTY!
 set mouse=a
 
+" Make Vim more useful
+set nocompatible
+
+" Use the OS clipboard by default (on versions compiled with `+clipboard`)
+set clipboard=unnamed
+
 " Enhance command-line completion
 set wildmenu
 " Allow cursor keys in insert mode
 set esckeys
+" Allow backspace in insert mode
+set backspace=indent,eol,start
 " Optimize for fast terminal connections
 set ttyfast
 " Add the g flag to search/replace by default
@@ -98,6 +106,9 @@ if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
 
+" Respect modeline in files
+set modeline
+set modelines=4
 " Enable line numbers
 set number
 
@@ -213,7 +224,7 @@ set noerrorbells
 set nostartofline
 " Show the cursor position
 set ruler
-" Don’t show the intro message when starting vim
+" Don’t show the intro message when starting Vim
 set shortmess=atI
 " Show the current mode
 set showmode
