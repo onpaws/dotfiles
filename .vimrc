@@ -13,7 +13,7 @@
 "w!! writes to read-only files
 
 "Use Tim Pope's Pathogen, see https://github.com/tpope/vim-pathogen
-call pathogen#infect()
+"call pathogen#infect()
 
 "    ____                           _ 
 "   / ___| ___ _ __   ___ _ __ __ _| |
