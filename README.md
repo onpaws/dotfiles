@@ -99,3 +99,7 @@ Suggestions/improvements
 * [Lauri ‘Lri’ Ranta](http://lri.me/) for sharing [loads of hidden preferences](http://lri.me/hiddenpreferences.txt)
 * [Tim Esselens](http://devel.datif.be/)
 * anyone who [contributed a patch](https://github.com/mathiasbynens/dotfiles/contributors) or [made a helpful suggestion](https://github.com/mathiasbynens/dotfiles/issues)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/onpaws/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
