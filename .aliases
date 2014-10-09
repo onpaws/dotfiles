@@ -154,6 +154,10 @@ alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resour
 #PAWS added 20120615 for JSON pretty print. http://bizorgnet.com/2012/06/14/prettyprint-json-in-terminal.html
 alias json="python -mjson.tool"
 
+#PAWS added via http://blog.stephenn.com/2010/09/mv-with-progress-bar.html
+alias rsynccopy="rsync --partial --progress --append -r"
+alias rsyncmove="rsync --partial --progress --append --remove-sent-files -r"
+
 alias pumpitup="osascript -e 'set volume 7'"
 
 # Kill all the tabs in Chrome to free up memory
