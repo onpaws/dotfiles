@@ -72,7 +72,7 @@ colorscheme desert
 
 "alternative color scheme
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 
 
 "increase default font size for MacVim
