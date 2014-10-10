@@ -94,7 +94,7 @@ inoremap jj <ESC>
 "FYI, ctrl-c and ctrl-[ also escape
 
 "Set history length longer
-set history=1000
+set history=10000
 
 " automatically reload vimrc when it's saved
 au BufWritePost .vimrc so ~/.vimrc
@@ -127,9 +127,6 @@ set guifont=Menlo\ Regular:h14
 
 "enable mouse in terminals. works for PuTTY!
 set mouse=a
-
-" Make Vim more useful
-set nocompatible
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
@@ -293,8 +290,6 @@ if exists("&relativenumber")
 	set relativenumber
 	au BufReadPost * set relativenumber
 endif
-" Start scrolling three lines before the horizontal window border
-set scrolloff=3
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
@@ -319,12 +314,16 @@ if has("autocmd")
 endif
 
 
-" Restore cursor on file open
 augroup vimrcEx
+  " Restore cursor on file open
   autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
 	\ exe "normal g`\"" |
     \ endif
+
+	"for ruby, autoindent with two spaces, always expand tabs
+	autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
+	autocmd FileType python set sw=4 sts=4 et
 augroup END
 
 
