@@ -12,17 +12,64 @@
 " ctrl-e ctrl-y scroll viewport up / down
 "w!! writes to read-only files
 
-"Use Tim Pope's Pathogen, see https://github.com/tpope/vim-pathogen
-"call pathogen#infect()
+"Set 'nocompatible' to ward off unexpected things that your distro might
+"have made, as well as sanely reset options when re-sourcing .vimrc
+set nocompatible
 
-"    ____                           _ 
+
+" VUNDLE BEGIN >>>>>>>>>>>>>>
+"Formerly used Tim Pope's Pathogen, see https://github.com/tpope/vim-pathogen
+"Now I use Vundle https://github.com/gmarik/Vundle.vim
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" VUNDLEEND <<<<<<<<<<<<<<<<<<<<<<<<<
+
+" vim-airline - unicode status line
+ if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+
+  " unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+"    ____                           _
 "   / ___| ___ _ __   ___ _ __ __ _| |
 "  | |  _ / _ \ '_ \ / _ \ '__/ _` | |
 "  | |_| |  __/ | | |  __/ | | (_| | |
 "   \____|\___|_| |_|\___|_|  \__,_|_|
-"Set 'nocompatible' to ward off unexpected things that your distro might
-"have made, as well as sanely reset options when re-sourcing .vimrc
-set nocompatible
 
 "Set the default encoding to utf-8
 set encoding=utf-8
@@ -31,7 +78,7 @@ set encoding=utf-8
 "Intelligent auto-indenting and plugins that are filetype specific
 filetype plugin indent on
 
-"w!! writes to read-only files. 
+"w!! writes to read-only files.
 cmap w!! %!sudo tee > /dev/null %
 
 "open new line to the same indent as the current line
@@ -52,10 +99,10 @@ set history=1000
 " automatically reload vimrc when it's saved
 au BufWritePost .vimrc so ~/.vimrc
 
-"  _   _ ___ 
+"  _   _ ___
 " | | | |_ _|
-" | | | || | 
-" | |_| || | 
+" | | | || |
+" | |_| || |
 "  \___/|___|
 
 " Map the so-called <leader> key to comma (backslash is default)
@@ -87,8 +134,6 @@ set nocompatible
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
 
-" Enhance command-line completion
-set wildmenu
 " Allow cursor keys in insert mode
 set esckeys
 " Allow backspace in insert mode
@@ -156,10 +201,10 @@ vnoremap / /\v
 set ignorecase
 set smartcase
 
-"highlight as search becomes more specific 
+"highlight as search becomes more specific
 set incsearch
 set showmatch
-set hlsearch 
+set hlsearch
 
 "clear highlights with ctrl-l
 nmap <silent> <C-l> :noh<CR>
@@ -189,7 +234,7 @@ set softtabstop=4
 "|__   |  _| .'|  _| | |_ -|  |  |__| |   | -_|
 "|_____|_| |__,|_| |___|___|  |_____|_|_|_|___|
 "more informative status line
-"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L] 
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 "set statusline=%1*%F%m%r%h%w%=%(%c%V\ %l/%L\ %P%)
 "set statusline=\%{strftime(\"\%c\",getftime(expand(\"\%\%\")))}
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]
@@ -204,16 +249,16 @@ vnoremap <F1> <ESC>
 
 " Shortcut to rapidly toggle `set list`
 nmap <lEeader>l :set list!<CR>
- 
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:>\ ,eol:$
 
-"  _                                                  
-" | |    __ _ _ __   __ _ _   _  __ _  __ _  ___  ___ 
+"  _
+" | |    __ _ _ __   __ _ _   _  __ _  __ _  ___  ___
 " | |   / _` | '_ \ / _` | | | |/ _` |/ _` |/ _ \/ __|
 " | |__| (_| | | | | (_| | |_| | (_| | (_| |  __/\__ \
 " |_____\__,_|_| |_|\__, |\__,_|\__,_|\__, |\___||___/
-"                   |___/             |___/                              
+"                   |___/             |___/
 """HTML"""
 """"""""""
 " Treat <li> and <p> tags like the block tags they are
@@ -272,3 +317,39 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+
+" Restore cursor on file open
+augroup vimrcEx
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+	\ exe "normal g`\"" |
+    \ endif
+augroup END
+
+
+" Multipurpose Tab Key
+" Indent if we're at beginning of file, else do intellisense-style
+" autocomplete
+function! InsertTabWrapper()
+	let col = col('.') - 1
+	if !col || getline('.')[col - 1] !~ '\k'
+		return "\<tab>"
+	else
+		return "\<c-p>"
+	endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
+
+" Rename current file
+function! RenameFile()
+	let old_name = expand('%')
+	let new_name = input('New file name: ', expand('%'))
+	if new_name != '' && new_name != old_name
+		exec ':saveas ' . new_name
+		exec ':silent !rm ' . old_name
+		redraw!
+	endif
+endfunction
+map <leader>n :call RenameFile()<cr>
