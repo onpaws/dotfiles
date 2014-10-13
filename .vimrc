@@ -99,6 +99,9 @@ set history=10000
 " automatically reload vimrc when it's saved
 au BufWritePost .vimrc so ~/.vimrc
 
+" If a file is changed outside of vim, automatically reload it without asking
+set autoread
+
 "  _   _ ___
 " | | | |_ _|
 " | | | || |
@@ -352,3 +355,21 @@ function! RenameFile()
 	endif
 endfunction
 map <leader>n :call RenameFile()<cr>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RemoveFancyCharacters COMMAND
+" Remove smart quotes, etc.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RemoveFancyCharacters()
+    let typo = {}
+    let typo["“"] = '"'
+    let typo["”"] = '"'
+    let typo["‘"] = "'"
+    let typo["’"] = "'"
+    let typo["–"] = '--'
+    let typo["—"] = '---'
+    let typo["…"] = '...'
+    :exe ":%s/".join(keys(typo), '\|').'/\=typo[submatch(0)]/ge'
+endfunction
+command! RemoveFancyCharacters :call RemoveFancyCharacters()
