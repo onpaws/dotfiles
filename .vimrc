@@ -210,8 +210,8 @@ set hlsearch
 nmap <silent> <C-l> :noh<CR>
 
 " Use Ack instead of Grep when available
-if executable("ack")
-  set grepprg=ack\ -H\ --nogroup\ --nocolor
+if executable("ag")
+  set grepprg=ag\ -H\ --nogroup\ --nocolor
 endif
 
 
