@@ -12,6 +12,9 @@
 " ctrl-e ctrl-y scroll viewport up / down
 "w!! writes to read-only files
 
+colorscheme solarized
+let g:solarized_termtrans=1
+
 "Set 'nocompatible' to ward off unexpected things that your distro might
 "have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
@@ -123,6 +126,7 @@ colorscheme desert
 "alternative color scheme
 set background=dark
 "colorscheme solarized
+let g:solarized_termtrans=1
 
 
 "increase default font size for MacVim
