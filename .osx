@@ -324,7 +324,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Empty Trash securely by default
-defaults write com.apple.finder EmptyTrashSecurely -bool true
+#defaults write com.apple.finder EmptyTrashSecurely -bool true
 #paws - i like faster deletes. disabled 20111118
 
 #Disable Google auto-update source:http://support.google.com/installer/bin/answer.py?hl=en&ctx=go&answer=147176
@@ -513,6 +513,13 @@ defaults write com.apple.terminal FocusFollowsMouse -bool true
 defaults write org.x.X11 wm_ffm -bool true
 
 ###############################################################################
+# iTunes                                                                      #
+###############################################################################
+
+# Disable automatic device syncing
+defaults write com.apple.iTunes dontAutomaticallySyncIPods -bool true
+
+###############################################################################
 # Mail                                                                        #
 ###############################################################################
 
@@ -548,7 +555,7 @@ defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnab
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
 sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 # Change indexing order and disable some search results
-# Yosemite-specific search results (remove them if your are using OS X 10.9 or older):
+# Yosemite-specific search results (remove them if you are using OS X 10.9 or older):
 # 	MENU_DEFINITION
 # 	MENU_CONVERSION
 # 	MENU_EXPRESSION
@@ -856,9 +863,9 @@ defaults write com.divisiblebyzero.Spectacle UndoLastMove -data 62706c6973743030
 ###############################################################################
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-	"Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
-	"Opera" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
-	"Transmission" "Twitter" "iCal"; do
-	killall "${app}" > /dev/null 2>&1
+	"Dock" "Finder" "Google Chrome" "Google Chrome Canary" "iTunes" "Mail" \
+	"Messages" "Opera" "Safari" "SizeUp" "Spectacle" "SystemUIServer" \
+	"Terminal" "Transmission" "Twitter" "iCal"; do
+	killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
