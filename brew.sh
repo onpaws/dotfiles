@@ -105,3 +105,6 @@ brew cleanup
 
 # Patrick's stuff
 brew install tmux
+brew install pstree
+brew install htop
+
