@@ -107,4 +107,8 @@ brew cleanup
 brew install tmux
 brew install pstree
 brew install htop
-
+# graphics compression
+brew install gif2png
+brew install pngcrush
+brew install gifsicle
+brew install libjpeg #comes with jpegtran
