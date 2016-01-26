@@ -112,3 +112,7 @@ brew install gif2png
 brew install pngcrush
 brew install gifsicle
 brew install libjpeg #comes with jpegtran
+# setup Vundle. it depends on git. via https://github.com/VundleVim/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# invoke vim command from shell. via http://stackoverflow.com/questions/12834370/run-vim-command-from-commandline
+vim +PluginInstall +qall
