@@ -154,7 +154,7 @@ alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 #Playpause iTunes
 alias playpause="osascript -e 'tell application \"iTunes\" to playpause'"
-alias p="osascript -e 'tell application \"iTunes\" to playpause'"
+#alias p="osascript -e 'tell application \"iTunes\" to playpause'"
 
 #PAWS added 20120418 for JavaScript Console via wat https://www.destroyallsoftware.com/talks/wat
 alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc"
